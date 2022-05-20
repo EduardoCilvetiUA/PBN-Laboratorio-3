@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 int main(){
     ifstream entrada("data tarea 3.csv");
 
@@ -13,6 +12,7 @@ int main(){
     char delimitador = ';';
     int player1[5];
     int player2[5];
+    string names[2];
     while(getline(entrada, linea))
     {
         string titulo, nombre, leyenda, tipo;
@@ -47,13 +47,14 @@ int main(){
             resistencia_int = stoi(resistencia);
         }
         
-        if(titulo == "Peleador"){
+        if(titulo == "Peleador" || titulo == "peleador"){
             if(contador_peleador == 1){
                 player1[0] = salud_int;
                 player1[1] = fuerza_int;
                 player1[2] = velocidad_int;
                 player1[3] = inteligencia_int;
                 player1[4] = resistencia_int;
+                names[0]= nombre;
             }
             else{
                 player2[0] = salud_int;
@@ -61,12 +62,20 @@ int main(){
                 player2[2] = velocidad_int;
                 player2[3] = inteligencia_int;
                 player2[4] = resistencia_int;
+                names[1]= nombre;
             }
             contador_peleador ++;
+        } else if(titulo == "Objeto" || titulo == "objeto"){
+
+
         }
+        
     }
-    peleador p1(player1[0], player1[1], player1[2], player1[3], player1[4]);
-    peleador p2(player2[0], player2[1], player2[2], player2[3], player2[4]);
-    cout << p1.desgaste(1) << endl;
+    peleador P1(names[0], player1[0], player1[1], player1[2], player1[3], player1[4]);
+    peleador P2(names[1], player2[0], player2[1], player2[2], player2[3], player2[4]);
+    cout << P1.get_nombre() << endl;
+
+
+
     return 0;
 }
