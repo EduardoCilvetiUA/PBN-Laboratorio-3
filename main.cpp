@@ -5,17 +5,20 @@
 
 using namespace std;
 
+
 int main(){
     ifstream entrada("data tarea 3.csv");
 
     string linea;
     char delimitador = ';';
-
+    int player1[5];
+    int player2[5];
     while(getline(entrada, linea))
     {
         string titulo, nombre, leyenda, tipo;
         string salud, fuerza, velocidad, inteligencia, resistencia;
         int salud_int, fuerza_int, velocidad_int, inteligencia_int, resistencia_int;
+        int contador_peleador=1;
         stringstream stream(linea);
         getline(stream, titulo, delimitador);
         titulo.erase(0,1);
@@ -23,6 +26,8 @@ int main(){
             getline(stream, nombre, delimitador);
             getline(stream, salud, delimitador);
             salud_int = stoi(salud);
+            getline(stream, fuerza, delimitador);
+            fuerza_int = stoi(fuerza);
             getline(stream, velocidad, delimitador);
             velocidad_int = stoi(velocidad);
             getline(stream, inteligencia, delimitador);
@@ -41,8 +46,27 @@ int main(){
             getline(stream, resistencia, delimitador);
             resistencia_int = stoi(resistencia);
         }
-        peleador p(salud_int, fuerza_int, velocidad_int, inteligencia_int, resistencia_int);
-        cout << p.desgaste(1)<<endl;
+        
+        if(titulo == "Peleador"){
+            if(contador_peleador == 1){
+                player1[0] = salud_int;
+                player1[1] = fuerza_int;
+                player1[2] = velocidad_int;
+                player1[3] = inteligencia_int;
+                player1[4] = resistencia_int;
+            }
+            else{
+                player2[0] = salud_int;
+                player2[1] = fuerza_int;
+                player2[2] = velocidad_int;
+                player2[3] = inteligencia_int;
+                player2[4] = resistencia_int;
+            }
+            contador_peleador ++;
+        }
     }
+    peleador p1(player1[0], player1[1], player1[2], player1[3], player1[4]);
+    peleador p2(player2[0], player2[1], player2[2], player2[3], player2[4]);
+    cout << p1.desgaste(1) << endl;
     return 0;
 }

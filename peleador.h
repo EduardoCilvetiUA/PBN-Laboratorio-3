@@ -7,5 +7,5 @@ private: //Es una constumbre que las propiedades sean privadas
     int resistencia_int;
 public:
 	peleador(int, int, int, int, int);
-    int desgaste(int);
+    double desgaste(int);
 };
