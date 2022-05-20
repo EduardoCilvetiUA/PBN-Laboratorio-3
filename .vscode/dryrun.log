@@ -1,6 +1,8 @@
 make.exe --dry-run --keep-going --print-directory
 make.exe: Entering directory 'd:/Usuario/Escritorio/Uandes/apuntes Universidad/Programacion Bajo Nivel/Labs/tarea3'
-g++ -std=c++11 -Wextra -Wundef -Werror -Wuninitialized -Winit-self -o p main.o
+g++  -c main.cpp -o main.o
  
+g++  -c peleador.cpp -o peleador.o
+g++  -o p main.o peleador.o
 make.exe: Leaving directory 'd:/Usuario/Escritorio/Uandes/apuntes Universidad/Programacion Bajo Nivel/Labs/tarea3'
  

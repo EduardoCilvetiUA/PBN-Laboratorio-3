@@ -1,13 +1,16 @@
 CC = g++
-flags = -std=c++11 -Wextra -Wundef -Werror -Wuninitialized -Winit-self
+flags = 
 #IMPORTANTE AGREGAR -Wall para poner bien las flags
-p: main.o
-	$(CC) $(flags) -o p main.o
-main.o:
+p: main.o peleador.o
+	$(CC) $(flags) -o p main.o peleador.o
+main.o: main.cpp
 	$(CC) $(flags) -c main.cpp -o main.o
+
+peleador.o: peleador.cpp
+	$(CC) $(flags) -c peleador.cpp -o peleador.o
 
 run: p
 	./p
 
 clean:
-	rm -rf *.o p
+	rm *.o p
