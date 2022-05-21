@@ -2,6 +2,7 @@
 #include <sstream>
 #include <fstream>
 #include "peleador.h"
+#include "objeto.h"
 
 using namespace std;
 
@@ -13,16 +14,18 @@ int main(){
     int player1[5];
     int player2[5];
     string names[2];
+    int contador_peleador=1;
+    peleador P1("", 0, 0, 0, 0, 0);
+    peleador P2("", 0, 0, 0, 0, 0);
     while(getline(entrada, linea))
     {
         string titulo, nombre, leyenda, tipo;
         string salud, fuerza, velocidad, inteligencia, resistencia;
         int salud_int, fuerza_int, velocidad_int, inteligencia_int, resistencia_int;
-        int contador_peleador=1;
         stringstream stream(linea);
         getline(stream, titulo, delimitador);
         titulo.erase(0,1);
-        if(titulo == "Peleador" || titulo == "peleador" || titulo == "Arena" || titulo == "arena"){
+        if(titulo == "Peleador" || titulo == "peleador"){
             getline(stream, nombre, delimitador);
             getline(stream, salud, delimitador);
             salud_int = stoi(salud);
@@ -34,6 +37,23 @@ int main(){
             inteligencia_int = stoi(inteligencia);
             getline(stream, resistencia, delimitador);
             resistencia_int = stoi(resistencia);
+            if(contador_peleador == 1){
+                P1.set_salud(salud_int);
+                P1.set_fuerza(fuerza_int);
+                P1.set_velocidad(velocidad_int);
+                P1.set_inteligencia(inteligencia_int);
+                P1.set_resistencia(resistencia_int);
+                P1.set_nombre(nombre);
+                contador_peleador = 2;
+            }
+            else{
+                P2.set_salud(salud_int);
+                P2.set_fuerza(fuerza_int);
+                P2.set_velocidad(velocidad_int);
+                P2.set_inteligencia(inteligencia_int);
+                P2.set_resistencia(resistencia_int);
+                P2.set_nombre(nombre);
+            }
         } else {
             getline(stream, nombre, delimitador);
             getline(stream, tipo, delimitador);
@@ -46,33 +66,11 @@ int main(){
             getline(stream, resistencia, delimitador);
             resistencia_int = stoi(resistencia);
         }
-        
-        if(titulo == "Peleador" || titulo == "peleador"){
-            if(contador_peleador == 1){
-                player1[0] = salud_int;
-                player1[1] = fuerza_int;
-                player1[2] = velocidad_int;
-                player1[3] = inteligencia_int;
-                player1[4] = resistencia_int;
-                names[0]= nombre;
-            }
-            else{
-                player2[0] = salud_int;
-                player2[1] = fuerza_int;
-                player2[2] = velocidad_int;
-                player2[3] = inteligencia_int;
-                player2[4] = resistencia_int;
-                names[1]= nombre;
-            }
-            contador_peleador ++;
-        } else if(titulo == "Objeto" || titulo == "objeto"){
-
-
+        if(titulo == "Objeto" || titulo == "objeto"){
+            
         }
         
     }
-    peleador P1(names[0], player1[0], player1[1], player1[2], player1[3], player1[4]);
-    peleador P2(names[1], player2[0], player2[1], player2[2], player2[3], player2[4]);
     cout << P1.get_nombre() << endl;
 
 

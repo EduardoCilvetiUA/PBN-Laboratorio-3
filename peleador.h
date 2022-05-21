@@ -15,4 +15,10 @@ public:
 	peleador(string, int, int, int, int, int);
     double desgaste(int);
     string get_nombre();
+    void set_salud(int);
+    void set_fuerza(int);
+    void set_velocidad(int);
+    void set_resistencia(int);
+    void set_inteligencia(int);
+    void set_nombre(string);
 };

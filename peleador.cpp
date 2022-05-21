@@ -24,3 +24,21 @@ double peleador::desgaste(int turno){
 string peleador::get_nombre(){
     return nombre;
 }
+void peleador::set_salud(int salud_int){
+    this -> salud_int =salud_int;
+}
+void peleador::set_fuerza(int fuerza_int){
+    this -> fuerza_int =fuerza_int;
+}
+void peleador::set_velocidad(int velocidad_int){
+    this -> velocidad_int =velocidad_int;
+}
+void peleador::set_resistencia(int resistencia_int){
+    this -> resistencia_int =resistencia_int;
+}
+void peleador::set_inteligencia(int inteligencia_int){
+    this -> inteligencia_int =inteligencia_int;
+}
+void peleador::set_nombre(string nombre){
+    this -> nombre =nombre;
+}
