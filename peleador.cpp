@@ -93,6 +93,21 @@ void peleador::change_inteligencia(int inteligencia_O, int inteligencia_int){
 void peleador::set_habilidad(int habilidad){
     this -> habilidad = habilidad;
 }
+
 int peleador::get_habilidad(){
     return habilidad;
+}
+void peleador::set_salud_original(int salud){
+    this -> salud_original_int = salud;
+}
+void peleador::rey_muertos(){
+    int valor_random = (rand() %10) +1;
+    cout<<valor_random<<endl;
+    if(valor_random < 5){
+        cout<<"el numero "<<valor_random << " < 5"<<endl;
+        this -> salud_int = salud_original_int / 2;
+    }
+    else{
+        this -> salud_int = 0;
+    }
 }

@@ -15,7 +15,7 @@ objeto.o: objeto.cpp
 arena.o: arena.cpp
 	$(CC) $(flags) -c arena.cpp -o arena.o
 
-run: p
+mocha: p
 	./p
 
 clean:

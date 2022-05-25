@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Wed May 25 14:32:28 2022
+# Make data base, printed on Wed May 25 15:59:11 2022
 
 # Variables
 
@@ -139,8 +139,7 @@ PSMODULEPATH = %ProgramFiles%\WindowsPowerShell\Modules;C:\Windows\system32\Wind
 # default
 MAKE_COMMAND := make.exe
 # environment
-P 
-ROCESSOR_ARCHITEW6432 = AMD64
+PROCESSOR_ARCHITEW6432 = AMD64
 # default
 .VARIABLES := 
 # automatic
@@ -211,16 +210,15 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-H61KKO2
 
 # Directories
 
-# C:\Users\lalo 
-c\AppData\Roaming\npm (key C:/Users/laloc/AppData/Roaming/npm, mtime 1652202051): 2 files, no impossibilities.
+# C:\Users\laloc\AppData\Roaming\npm (key C:/Users/laloc/AppData/Roaming/npm, mtime 1652202051): 2 files, no impossibilities.
 # C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1635686280): 5 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1635663400): 32 files, no impossibilities.
-# . (key d:/Usuario/Escritorio/Uandes/apuntes Universidad/Programacion Bajo Nivel/Labs/tarea3, mtime 1653503449): 19 files, no impossibilities.
+# . (key d:/Usuario/Escritorio/Uandes/apuntes Universidad/Programacion Bajo Nivel/Labs/tarea3, mti 
+me 1653508731): 19 files, no impossibilities.
 # C:\Users\laloc\AppData\Local\Microsoft\WindowsApps (key C:/Users/laloc/AppData/Local/Microsoft/WindowsApps, mtime 1647791710): 24 files, no impossibilities.
 # C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1638758528): 5 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1650406329): 8 files, no impossibilities.
-# C:\Windows\System32\OpenSSH\: 
- could not be stat'd.
+# C:\Windows\System32\OpenSSH\: could not be stat'd.
 # C:\Users\laloc\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/laloc/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1652982176): 4 files, no impossibilities.
 # C:\MinGW\bin (key C:/MinGW/bin, mtime 1652721223): 8 files, no impossibilities.
 # C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1635686455): 10 files, no impossibilities.
@@ -230,7 +228,8 @@ possibilities.
 # C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1652202055): 13 files, no impossibilities.
 # C:\msys64\mingw64\bin (key C:/msys64/mingw64/bin, mtime 1652719349): 175 files, no impossibilities.
 # C:\Program Files (x86)\QuickTime\QTSystem\ (key C:/Program Files (x86)/QuickTime/QTSystem/, mtime 1637953395): 65 files, no impossibilities.
-# C:\Windows\system32 (key C:/Windows/system32, mtime 1652591760): 3017 files, no impossibilities.
+# C:\Windows\system32 (key C:/Windows 
+/system32, mtime 1652591760): 3017 files, no impossibilities.
 
 # 3675 files, no impossibilities in 17 directories.
 
@@ -252,8 +251,7 @@ p: main.o peleador.o objeto.o arena.o
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 5):
-	$(CC) $(flag 
-s) main.o peleador.o objeto.o arena.o -o p
+	$(CC) $(flags) main.o peleador.o objeto.o arena.o -o p
 
 peleador.o: peleador.cpp
 #  Implicit rule search has not been done.
@@ -271,15 +269,14 @@ peleador.o: peleador.cpp
 arena.o: arena.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#   
-File has not been updated.
+#  File has not been updated.
 #  recipe to execute (from 'makefile', line 16):
 	$(CC) $(flags) -c arena.cpp -o arena.o
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 14:32:25
+#  Last modified 2022-05-25 15:58:43
 #  File has been updated.
 #  Successfully updated.
 
@@ -292,8 +289,7 @@ main.cpp:
 objeto.o: objeto.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  Fi 
-le has not been updated.
+#  File has not been updated.
 #  recipe to execute (from 'makefile', line 13):
 	$(CC) $(flags) -c objeto.cpp -o objeto.o
 
@@ -303,18 +299,10 @@ le has not been updated.
 #  Modification time never checked.
 #  File has not been updated.
 
-run: p
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 19):
-	./p
-
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  
- File has not been updated.
+#  File has not been updated.
 #  recipe to execute (from 'makefile', line 22):
 	del main.o peleador.o objeto.o arena.o OUTPUT.txt
 
@@ -333,10 +321,17 @@ main.o: main.cpp
 
 # Not a target:
 arena.cpp:
-#   
-Implicit rule search has not been done.
+#  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+mocha: p
+#  Implicit rule search has not been done.
+#  Modificat 
+ion time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 19):
+	./p
 
 # Not a target:
 objeto.cpp:
@@ -352,16 +347,15 @@ objeto.cpp:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 7 (6) / strings = 3633 / storage = 55250 B / avg = 15 B
-# current buf: size = 
- 8174 B / used = 6249 B / count = 369 / avg = 16 B
-# other used: total = 47076 B / count = 3264 / avg = 14 B
+# strcache buffers: 7 (6) / strings = 3633 / storage = 55252 B / avg = 15 B
+# current buf: size = 8174 B / used = 6251 B / count = 369 / avg = 16 B
+# other used: total = 47078 B / count = 3264 / avg = 14 B
 # other free: total = 43 B / max = 14 B / min = 1 B / avg = 7 B
 
 # strcache performance: lookups = 3720 / hit rate = 2%
 # hash-table stats:
-# Load=3633/8192=44%, Rehash=0, Collisions=1324/3720=36%
-# Finished Make data base on Wed May 25 14:32:28 2022
+# Load=3633/8192=44%, Rehash=0, Collisions=1326/3720=36%
+# Finished Make data base on Wed May 25 15:59:11 2022
 
  
 make.exe: *** No rule to make target 'all'.  Stop.

@@ -133,6 +133,8 @@ int main(){
         }
     }
     
+    P1.set_salud_original(P1.get_salud());
+    P2.set_salud_original(P2.get_salud());
     ofstream archivo;
     archivo.open("OUTPUT.txt",ios :: out);// Abriendo el archivo
     if(archivo.fail()){
@@ -163,7 +165,6 @@ int main(){
     archivo <<"Velocidad: " << P1.get_velocidad() << endl;
     archivo <<"Inteligencia: " << P1.get_inteligencia() << endl;
     archivo <<"Resistencia: " << P1.get_resistencia() << endl;
-    archivo<<endl;
     archivo << "=====================================================================================================================" << endl;
     archivo<<P2.get_nombre()<< endl;
     archivo <<"Salud P2: " << P2.get_salud() << endl;
@@ -174,8 +175,6 @@ int main(){
     archivo << "=====================================================================================================================" << endl;
     P1.set_habilidad(Arena.habilidades_especiales());
     P2.set_habilidad(Arena.habilidades_especiales());
-    cout<<"Habilidad: "<< P1.get_habilidad()<<endl;
-    cout<<"Habilidad: "<< P2.get_habilidad()<<endl;
     if(P1.get_habilidad() != 0){
         if(P1.get_habilidad() == 1) archivo<<"La arena a conferido a "<<P1.get_nombre()<< " la habilidad 'rey de los muertos' "<< endl;
         else archivo<<"La arena a conferido a "<<P1.get_nombre()<< " la habilidad 'ultimo aliento' "<< endl;
@@ -191,7 +190,6 @@ int main(){
     while(vivos == 0){
         P1.set_critico();
         int golpe = P1.impacto(P1.desgaste(turnos));
-        cout<< "Critico...: "<<P1.get_critico()<<endl;
         archivo << P1.get_nombre();
         if(golpe == 0){
             archivo << " pierde el ataque" << endl;
@@ -209,13 +207,65 @@ int main(){
                 diferencia = golpe;
                 P2.set_salud(nueva_salud);
             }
-            archivo << "con un golpe de "<< golpe << " y "<< P2.get_nombre()<< " pierde " << diferencia<<" de vida, quedando con "<< P2.get_salud()<<" de salud."<< endl;
+            archivo << "con un golpe de "<< golpe << " y "<< P2.get_nombre()<< " pierde " << diferencia<<" de vida y quedando con "<< P2.get_salud()<<" de salud."<< endl;
         }
-        archivo << "============================================ Fin "<< turnos<<"° turno ============================================"<< endl;
+        if(P2.get_salud() == 0){
+            archivo<< "=============================================== "<<P2.get_nombre()<<" muere ==============================================="<< endl;
+            if(P2.get_habilidad() == 1){
+                P2.rey_muertos();
+                if(P2.get_salud() != 0){
+                    archivo<<"-------------------------------- Habilidad especial Rey de los muerto activada -----------------------------------------------"<<endl;
+                }
+                else{
+                    vivos = 1;
+                }
+            }
+            else{
+                vivos =1;
+            }
+        }
+        archivo << endl;
+        if(vivos == 0){
+            P2.set_critico();
+            golpe = P2.impacto(P2.desgaste(turnos));
+            archivo << P2.get_nombre();
+            if(golpe <= 0){
+                archivo << " pierde el ataque" << endl;
+            }
+            else{
+                if(P1.get_critico() == 1) archivo << " ataca ";
+                else archivo << " hace un critico, ";
+                int nueva_salud = P1.get_salud() - golpe;
+                int diferencia;
+                if(nueva_salud < 0){
+                    diferencia = golpe - (nueva_salud*-1);
+                    P1.set_salud(0);
+                }
+                else{
+                    diferencia = golpe;
+                    P1.set_salud(nueva_salud);
+                }
+                archivo << "con un golpe de "<< golpe << " y "<< P1.get_nombre()<< " pierde " << diferencia<<" de vida y quedando con "<< P1.get_salud()<<" de salud."<< endl;
+            }
+            archivo << "============================================ Fin "<< turnos<<"° turno ============================================"<< endl;
+            }
+            if(P1.get_salud() == 0){
+            archivo<< "=============================================== "<<P1.get_nombre()<<" muere ==============================================="<< endl;
+            if(P1.get_habilidad() == 1){
+                cout<<"Si hay rey de los muertos"<< endl;
+                P1.rey_muertos();
+                if(P1.get_salud() != 0){
+                    archivo<< "-------------------------------------- Habilidad especial Rey de los muerto activada -----------------------------------------------------"<<endl;
+                }
+                else{
+                    vivos = 1;
+                }
+            }
+            else{
+                vivos = 1;
+            }
+        }
         turnos++;
-        if(turnos == 4){
-            vivos =1;
-        }
     }
 
     archivo.close();

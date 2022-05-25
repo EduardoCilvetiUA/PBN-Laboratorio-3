@@ -14,6 +14,7 @@ private: //Es una constumbre que las propiedades sean privadas
     int habilidad;
     int multiplicador;
     int critico;
+    int salud_original_int;
 public:
 	peleador(string, int, int, int, int, int);
     double desgaste(int);
@@ -27,6 +28,7 @@ public:
     int get_habilidad();
     int get_critico();
     int set_critico();
+    void set_salud_original(int);
     void set_habilidad(int);
     void set_salud(int);
     void set_fuerza(int);
@@ -39,4 +41,5 @@ public:
     void change_velocidad(int, int);
     void change_resistencia(int, int);
     void change_inteligencia(int, int);
+    void rey_muertos();
 };
