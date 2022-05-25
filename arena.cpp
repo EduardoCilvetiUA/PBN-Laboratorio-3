@@ -2,6 +2,8 @@
 #include <iostream>
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
 
 using namespace std;
 
@@ -34,4 +36,12 @@ int arena::new_velocidad(int personaje, int arena){
 }
 int arena::new_inteligencia(int personaje, int arena){
     return personaje + (personaje * arena* 0.01);
+}
+int arena::habilidades_especiales(){
+    srand(time(0));
+    int habilidades;
+    int random1;
+    random1 = rand()%3;
+    habilidades = random1;
+    return habilidades;
 }

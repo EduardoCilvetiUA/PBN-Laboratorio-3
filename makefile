@@ -19,4 +19,4 @@ run: p
 	./p
 
 clean:
-	del main.o peleador.o objeto.o arena.o
+	del main.o peleador.o objeto.o arena.o OUTPUT.txt

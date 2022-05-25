@@ -18,4 +18,5 @@ public:
     int new_resistencia(int, int);
     int new_velocidad(int, int);
     int new_inteligencia(int, int);
+    int habilidades_especiales();
 };

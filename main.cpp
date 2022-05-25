@@ -5,7 +5,6 @@
 #include "objeto.h"
 #include "arena.h"
 
-
 using namespace std;
 
 int main(){
@@ -133,36 +132,92 @@ int main(){
 
         }
     }
+    
+    ofstream archivo;
+    archivo.open("OUTPUT.txt",ios :: out);// Abriendo el archivo
+    if(archivo.fail()){
+        cout <<"No se pudo abrir el archivo";
+        exit(1);
+    }
     if(P102.get_nombre() != ""){
-        cout << P1.get_nombre()<<" equipado con los objetos "<< P101.get_nombre() << " y " << P102.get_nombre() << endl;
+        archivo << P1.get_nombre()<<" equipado con los objetos "<< P101.get_nombre() << " y " << P102.get_nombre() << endl;
     }
     else{
-        cout << P1.get_nombre()<<" equipado con el objeto "<< P101.get_nombre()<< endl;
+        archivo << P1.get_nombre()<<" equipado con el objeto "<< P101.get_nombre()<< endl;
     }
 
-    cout << "Se enfrenta contra:" << endl;
+    archivo << "Se enfrenta contra:" << endl;
 
     if(P202.get_nombre() != ""){
-        cout << P2.get_nombre()<<" equipado con los objetos "<< P201.get_nombre() << " y " << P202.get_nombre() << endl;
+        archivo << P2.get_nombre()<<" equipado con los objetos "<< P201.get_nombre() << " y " << P202.get_nombre() << endl;
     }
     else{
-        cout << P2.get_nombre()<<" equipado con el objeto "<< P201.get_nombre()<< endl;
+        archivo << P2.get_nombre()<<" equipado con el objeto "<< P201.get_nombre()<< endl;
     }
-    cout << endl;
-    cout << "Se enfrentaran en el la arena llamada: " << Arena.get_nombre()<<endl;
-    cout<<endl;
-    cout << P1.get_nombre()<< endl;
-    cout <<"Salud P1: " << P1.get_salud() << endl;
-    cout <<"Fuerza: " << P1.get_fuerza() << endl;
-    cout <<"Velocidad: " << P1.get_velocidad() << endl;
-    cout <<"Inteligencia: " << P1.get_inteligencia() << endl;
-    cout <<"Resistencia: " << P1.get_resistencia() << endl;
-    cout<<endl;
-    cout<<P2.get_nombre()<< endl;
-    cout <<"Salud P2: " << P2.get_salud() << endl;
-    cout <<"Fuerza: " << P2.get_fuerza() << endl;
-    cout <<"Velocidad: " << P2.get_velocidad() << endl;
-    cout <<"Inteligencia: " << P2.get_inteligencia() << endl;
-    cout <<"Resistencia: " << P2.get_resistencia() << endl;
+    archivo << "=====================================================================================================================" << endl;
+    archivo << "Se enfrentaran en el la arena llamada: " << Arena.get_nombre()<<endl;
+    archivo << "=====================================================================================================================" << endl;
+    archivo << P1.get_nombre()<< endl;
+    archivo <<"Salud P1: " << P1.get_salud() << endl;
+    archivo <<"Fuerza: " << P1.get_fuerza() << endl;
+    archivo <<"Velocidad: " << P1.get_velocidad() << endl;
+    archivo <<"Inteligencia: " << P1.get_inteligencia() << endl;
+    archivo <<"Resistencia: " << P1.get_resistencia() << endl;
+    archivo<<endl;
+    archivo << "=====================================================================================================================" << endl;
+    archivo<<P2.get_nombre()<< endl;
+    archivo <<"Salud P2: " << P2.get_salud() << endl;
+    archivo <<"Fuerza: " << P2.get_fuerza() << endl;
+    archivo <<"Velocidad: " << P2.get_velocidad() << endl;
+    archivo <<"Inteligencia: " << P2.get_inteligencia() << endl;
+    archivo <<"Resistencia: " << P2.get_resistencia() << endl;
+    archivo << "=====================================================================================================================" << endl;
+    P1.set_habilidad(Arena.habilidades_especiales());
+    P2.set_habilidad(Arena.habilidades_especiales());
+    cout<<"Habilidad: "<< P1.get_habilidad()<<endl;
+    cout<<"Habilidad: "<< P2.get_habilidad()<<endl;
+    if(P1.get_habilidad() != 0){
+        if(P1.get_habilidad() == 1) archivo<<"La arena a conferido a "<<P1.get_nombre()<< " la habilidad 'rey de los muertos' "<< endl;
+        else archivo<<"La arena a conferido a "<<P1.get_nombre()<< " la habilidad 'ultimo aliento' "<< endl;
+    }
+    if(P2.get_habilidad() != 0){
+        if(P2.get_habilidad() == 1) archivo<<"La arena a conferido a "<<P2.get_nombre()<< " la habilidad 'rey de los muertos' "<< endl;
+        else archivo<<"La arena a conferido a "<<P2.get_nombre()<< " la habilidad 'ultimo aliento' "<< endl;
+    }
+    archivo << "=====================================================================================================================" << endl;
+    archivo << "INICIA LA PELEA"<< endl;
+    int vivos = 0;
+    int turnos = 1;
+    while(vivos == 0){
+        P1.set_critico();
+        int golpe = P1.impacto(P1.desgaste(turnos));
+        cout<< "Critico...: "<<P1.get_critico()<<endl;
+        archivo << P1.get_nombre();
+        if(golpe == 0){
+            archivo << " pierde el ataque" << endl;
+        }
+        else{
+            if(P1.get_critico() == 1) archivo << " ataca ";
+            else archivo << " hace un critico, ";
+            int nueva_salud = P2.get_salud() - golpe;
+            int diferencia;
+            if(nueva_salud < 0){
+                diferencia = golpe - (nueva_salud*-1);
+                P2.set_salud(0);
+            }
+            else{
+                diferencia = golpe;
+                P2.set_salud(nueva_salud);
+            }
+            archivo << "con un golpe de "<< golpe << " y "<< P2.get_nombre()<< " pierde " << diferencia<<" de vida, quedando con "<< P2.get_salud()<<" de salud."<< endl;
+        }
+        archivo << "============================================ Fin "<< turnos<<"° turno ============================================"<< endl;
+        turnos++;
+        if(turnos == 4){
+            vivos =1;
+        }
+    }
+
+    archivo.close();
     return 0;
 }

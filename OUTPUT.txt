@@ -1,0 +1,31 @@
+skull equipado con los objetos Parabellum y Chaleco antibalas 
+Se enfrenta contra:
+gary equipado con el objeto Beretta
+=====================================================================================================================
+Se enfrentaran en el la arena llamada: Midgard
+=====================================================================================================================
+skull
+Salud P1: 264
+Fuerza: 100
+Velocidad: 77
+Inteligencia: 30
+Resistencia: 90
+
+=====================================================================================================================
+gary
+Salud P2: 240
+Fuerza: 250
+Velocidad: -33
+Inteligencia: 20
+Resistencia: -30
+=====================================================================================================================
+La arena a conferido a skull la habilidad 'rey de los muertos' 
+La arena a conferido a gary la habilidad 'rey de los muertos' 
+=====================================================================================================================
+INICIA LA PELEA
+skull ataca con un golpe de 71 y gary pierde 71 de vida, quedando con 169 de salud.
+============================================ Fin 1° turno ============================================
+skull ataca con un golpe de 67 y gary pierde 67 de vida, quedando con 102 de salud.
+============================================ Fin 2° turno ============================================
+skull ataca con un golpe de 62 y gary pierde 62 de vida, quedando con 40 de salud.
+============================================ Fin 3° turno ============================================

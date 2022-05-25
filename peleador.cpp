@@ -2,6 +2,9 @@
 #include <iostream>
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
+
 
 using namespace std;
 
@@ -12,15 +15,27 @@ peleador::peleador(string nombre, int salud_int, int fuerza_int, int velocidad_i
     this -> inteligencia_int = inteligencia_int;
     this -> resistencia_int = resistencia_int;
     this -> nombre = nombre;
+    this -> habilidad = habilidad;
+    this -> multiplicador = multiplicador;
+    this -> critico = critico;
 }
 double peleador::desgaste(int turno){
-    cout << "Resistencia: "<< resistencia_int << endl;
     double e = 2.72;
     double elevado = -20.0*turno/resistencia_int;
-    double resistencia_nueva = pow(e,elevado)*(1+(20.0*turno/resistencia_int));
-    return resistencia_nueva;
+    double multiplicador = pow(e,elevado)*(1+(20.0*turno/resistencia_int));
+    return multiplicador;
 }
 
+int peleador::impacto(double desgaste){
+    int golpe = critico*(((velocidad_int*fuerza_int)/(velocidad_int + fuerza_int)) + inteligencia_int)*desgaste;
+    return golpe;
+}
+int peleador::set_critico(){
+    srand(time(0));
+    int valor_random = rand() %3;
+    this -> critico =valor_random;
+    return critico;
+}
 string peleador::get_nombre(){
     return nombre;
 }
@@ -38,6 +53,9 @@ int peleador::get_velocidad(){
 }
 int peleador::get_inteligencia(){
     return inteligencia_int;
+}
+int peleador::get_critico(){
+    return critico;
 }
 void peleador::set_salud(int salud_int){
     this -> salud_int =salud_int;
@@ -57,6 +75,7 @@ void peleador::set_inteligencia(int inteligencia_int){
 void peleador::set_nombre(string nombre){
     this -> nombre =nombre;
 }
+
 void peleador::change_salud(int salud_O, int salud_int){
     this -> salud_int = salud_int + salud_O;
 }
@@ -71,4 +90,10 @@ void peleador::change_resistencia(int resistencia_O, int resistencia_int){
 }
 void peleador::change_inteligencia(int inteligencia_O, int inteligencia_int){
     this -> inteligencia_int = inteligencia_int + inteligencia_O;
+}
+void peleador::set_habilidad(int habilidad){
+    this -> habilidad = habilidad;
+}
+int peleador::get_habilidad(){
+    return habilidad;
 }
