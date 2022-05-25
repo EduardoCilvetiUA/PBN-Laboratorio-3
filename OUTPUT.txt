@@ -19,13 +19,13 @@ Velocidad: -33
 Inteligencia: 20
 Resistencia: -30
 =====================================================================================================================
-La arena a conferido a skull la habilidad 'rey de los muertos' 
+La arena a conferido a skull la habilidad 'ultimo aliento' 
 La arena a conferido a gary la habilidad 'rey de los muertos' 
 =====================================================================================================================
 INICIA LA PELEA
 skull ataca con un golpe de 71 y gary pierde 71 de vida, quedando con 169 de salud.
 ============================================ Fin 1° turno ============================================
-skull ataca con un golpe de 67 y gary pierde 67 de vida, quedando con 102 de salud.
+skull hace un critico, con un golpe de 135 y gary pierde 135 de vida, quedando con 34 de salud.
 ============================================ Fin 2° turno ============================================
-skull ataca con un golpe de 62 y gary pierde 62 de vida, quedando con 40 de salud.
+skull pierde el ataque
 ============================================ Fin 3° turno ============================================

@@ -9,7 +9,7 @@ using namespace std;
 
 int main(){
     ifstream entrada("data tarea 3.csv");
-
+    srand(time(NULL));
     string linea;
     char delimitador = ';';
     int contador_peleador=1;

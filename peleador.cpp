@@ -31,7 +31,6 @@ int peleador::impacto(double desgaste){
     return golpe;
 }
 int peleador::set_critico(){
-    srand(time(0));
     int valor_random = rand() %3;
     this -> critico =valor_random;
     return critico;

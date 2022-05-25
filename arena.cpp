@@ -38,7 +38,6 @@ int arena::new_inteligencia(int personaje, int arena){
     return personaje + (personaje * arena* 0.01);
 }
 int arena::habilidades_especiales(){
-    srand(time(0));
     int habilidades;
     int random1;
     random1 = rand()%3;

@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Wed May 25 13:16:25 2022
+# Make data base, printed on Wed May 25 14:32:28 2022
 
 # Variables
 
@@ -48,8 +48,7 @@ PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 MAKEFILE_LIST :=  makefile
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
-# envir 
-onment
+# environment
 TMP = C:\Users\laloc\AppData\Local\Temp
 # environment
 VSCODE_VERBOSE_LOGGING = true
@@ -103,8 +102,7 @@ USERNAME = laloc
 PUBLIC = C:\Users\Public
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
-# environment 
-
+# environment
 VSCODE_CODE_CACHE_PATH = C:\Users\laloc\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
@@ -141,7 +139,8 @@ PSMODULEPATH = %ProgramFiles%\WindowsPowerShell\Modules;C:\Windows\system32\Wind
 # default
 MAKE_COMMAND := make.exe
 # environment
-PROCESSOR_ARCHITEW6432 = AMD64
+P 
+ROCESSOR_ARCHITEW6432 = AMD64
 # default
 .VARIABLES := 
 # automatic
@@ -186,8 +185,7 @@ LC_ALL = C
 # automatic
 ^F = $(notdir $^)
 # default
-SUFF 
-IXES := 
+SUFFIXES := 
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -217,7 +215,7 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-H61KKO2
 c\AppData\Roaming\npm (key C:/Users/laloc/AppData/Roaming/npm, mtime 1652202051): 2 files, no impossibilities.
 # C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1635686280): 5 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1635663400): 32 files, no impossibilities.
-# . (key d:/Usuario/Escritorio/Uandes/apuntes Universidad/Programacion Bajo Nivel/Labs/tarea3, mtime 1653498963): 19 files, no impossibilities.
+# . (key d:/Usuario/Escritorio/Uandes/apuntes Universidad/Programacion Bajo Nivel/Labs/tarea3, mtime 1653503449): 19 files, no impossibilities.
 # C:\Users\laloc\AppData\Local\Microsoft\WindowsApps (key C:/Users/laloc/AppData/Local/Microsoft/WindowsApps, mtime 1647791710): 24 files, no impossibilities.
 # C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1638758528): 5 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1650406329): 8 files, no impossibilities.
@@ -232,8 +230,7 @@ possibilities.
 # C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1652202055): 13 files, no impossibilities.
 # C:\msys64\mingw64\bin (key C:/msys64/mingw64/bin, mtime 1652719349): 175 files, no impossibilities.
 # C:\Program Files (x86)\QuickTime\QTSystem\ (key C:/Program Files (x86)/QuickTime/QTSystem/, mtime 1637953395): 65 files, no impossibilities.
-# C:\Windows\system32 (key C:/Windows 
-/system32, mtime 1652591760): 3017 files, no impossibilities.
+# C:\Windows\system32 (key C:/Windows/system32, mtime 1652591760): 3017 files, no impossibilities.
 
 # 3675 files, no impossibilities in 17 directories.
 
@@ -255,7 +252,8 @@ p: main.o peleador.o objeto.o arena.o
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 5):
-	$(CC) $(flags) main.o peleador.o objeto.o arena.o -o p
+	$(CC) $(flag 
+s) main.o peleador.o objeto.o arena.o -o p
 
 peleador.o: peleador.cpp
 #  Implicit rule search has not been done.
@@ -273,14 +271,15 @@ peleador.o: peleador.cpp
 arena.o: arena.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
+#   
+File has not been updated.
 #  recipe to execute (from 'makefile', line 16):
 	$(CC) $(flags) -c arena.cpp -o arena.o
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 13:16:23
+#  Last modified 2022-05-25 14:32:25
 #  File has been updated.
 #  Successfully updated.
 
@@ -362,7 +361,7 @@ objeto.cpp:
 # strcache performance: lookups = 3720 / hit rate = 2%
 # hash-table stats:
 # Load=3633/8192=44%, Rehash=0, Collisions=1324/3720=36%
-# Finished Make data base on Wed May 25 13:16:25 2022
+# Finished Make data base on Wed May 25 14:32:28 2022
 
  
 make.exe: *** No rule to make target 'all'.  Stop.
