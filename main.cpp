@@ -184,7 +184,7 @@ int main(){
         else archivo<<"La arena a conferido a "<<P2.get_nombre()<< " la habilidad 'ultimo aliento' "<< endl;
     }
     archivo << "=====================================================================================================================" << endl;
-    archivo << "INICIA LA PELEA"<< endl;
+    archivo << "INICIA LA PELEA!!!!"<< endl;
     int vivos = 0;
     int turnos = 1;
     while(vivos == 0){
@@ -207,18 +207,14 @@ int main(){
                 diferencia = golpe;
                 P2.set_salud(nueva_salud);
             }
-            archivo << "con un golpe de "<< golpe << " y "<< P2.get_nombre()<< " pierde " << diferencia<<" de vida y quedando con "<< P2.get_salud()<<" de salud."<< endl;
+            archivo << "con un golpe de "<< golpe << " y "<< P2.get_nombre()<< " pierde " << diferencia<<" de vida, quedando con "<< P2.get_salud()<<" de salud."<< endl;
         }
         if(P2.get_salud() == 0){
             archivo<< "=============================================== "<<P2.get_nombre()<<" muere ==============================================="<< endl;
             if(P2.get_habilidad() == 1){
                 P2.rey_muertos();
-                if(P2.get_salud() != 0){
-                    archivo<<"-------------------------------- Habilidad especial Rey de los muerto activada -----------------------------------------------"<<endl;
-                }
-                else{
-                    vivos = 1;
-                }
+                P2.set_habilidad(0);
+                archivo<<"-------------------------------- Habilidad especial Rey de los muerto activada -----------------------------------------------"<<endl;
             }
             else{
                 vivos =1;
@@ -252,22 +248,23 @@ int main(){
             if(P1.get_salud() == 0){
             archivo<< "=============================================== "<<P1.get_nombre()<<" muere ==============================================="<< endl;
             if(P1.get_habilidad() == 1){
-                cout<<"Si hay rey de los muertos"<< endl;
                 P1.rey_muertos();
-                if(P1.get_salud() != 0){
-                    archivo<< "-------------------------------------- Habilidad especial Rey de los muerto activada -----------------------------------------------------"<<endl;
-                }
-                else{
-                    vivos = 1;
-                }
-            }
+                P1.set_habilidad(0);
+                archivo<< "-------------------------------------- Habilidad especial Rey de los muerto activada -----------------------------------------------------"<<endl;            }
             else{
                 vivos = 1;
             }
         }
         turnos++;
     }
-
+    archivo<<"------------------------------------------- Fin de la pelea ---------------------------------------------------------"<<endl;
+    if(P2.get_salud() == 0){
+        archivo << "----------------------------------------- "<< P1.get_nombre()<<" gana la pelea -------------------------------------------------------"<< endl;
+    }
+    else{
+        archivo << "----------------------------------------- "<< P2.get_nombre()<<" gana la pelea -------------------------------------------------------"<< endl;
+    }
+    
     archivo.close();
     return 0;
 }

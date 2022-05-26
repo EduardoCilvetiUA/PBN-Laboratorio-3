@@ -14,15 +14,14 @@ Resistencia: 90
 gary
 Salud P2: 240
 Fuerza: 250
-Velocidad: -33
+Velocidad: 0
 Inteligencia: 20
-Resistencia: -30
+Resistencia: 0
 =====================================================================================================================
-La arena a conferido a skull la habilidad 'rey de los muertos' 
-La arena a conferido a gary la habilidad 'ultimo aliento' 
+La arena a conferido a gary la habilidad 'rey de los muertos' 
 =====================================================================================================================
-INICIA LA PELEA
-skull pierde el ataque
+INICIA LA PELEA!!!!
+skull ataca con un golpe de 71 y gary pierde 71 de vida, quedando con 169 de salud.
 
 gary pierde el ataque
 ============================================ Fin 1° turno ============================================
@@ -32,10 +31,24 @@ gary pierde el ataque
 ============================================ Fin 2° turno ============================================
 skull pierde el ataque
 
-gary hace un critico, con un golpe de 133 y skull pierde 133 de vida y quedando con 131 de salud.
+gary pierde el ataque
 ============================================ Fin 3° turno ============================================
-skull hace un critico, con un golpe de 113 y gary pierde 113 de vida y quedando con 127 de salud.
+skull hace un critico, con un golpe de 113 y gary pierde 113 de vida, quedando con 56 de salud.
 
-gary hace un critico, con un golpe de 432 y skull pierde 131 de vida y quedando con 0 de salud.
+gary pierde el ataque
 ============================================ Fin 4° turno ============================================
-=============================================== skull muere ===============================================
+skull ataca con un golpe de 50 y gary pierde 50 de vida, quedando con 6 de salud.
+
+gary pierde el ataque
+============================================ Fin 5° turno ============================================
+skull ataca con un golpe de 44 y gary pierde 6 de vida, quedando con 0 de salud.
+=============================================== gary muere ===============================================
+-------------------------------- Habilidad especial Rey de los muerto activada -----------------------------------------------
+
+gary pierde el ataque
+============================================ Fin 6° turno ============================================
+skull ataca con un golpe de 39 y gary pierde 0 de vida, quedando con 0 de salud.
+=============================================== gary muere ===============================================
+
+------------------------------------------- Fin de la pelea ---------------------------------------------------------
+----------------------------------------- skull gana la pelea -------------------------------------------------------

@@ -60,15 +60,27 @@ void peleador::set_salud(int salud_int){
     this -> salud_int =salud_int;
 }
 void peleador::set_fuerza(int fuerza_int){
+    if(fuerza_int <0){
+        fuerza_int =0;
+    }
     this -> fuerza_int =fuerza_int;
 }
 void peleador::set_velocidad(int velocidad_int){
+    if(velocidad_int <0){
+        velocidad_int =0;
+    }
     this -> velocidad_int =velocidad_int;
 }
 void peleador::set_resistencia(int resistencia_int){
+    if(resistencia_int <0){
+        resistencia_int =0;
+    }
     this -> resistencia_int =resistencia_int;
 }
 void peleador::set_inteligencia(int inteligencia_int){
+    if(inteligencia_int <0){
+        inteligencia_int =0;
+    }
     this -> inteligencia_int =inteligencia_int;
 }
 void peleador::set_nombre(string nombre){
